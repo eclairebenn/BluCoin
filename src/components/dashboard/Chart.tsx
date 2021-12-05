@@ -8,6 +8,7 @@ import {
   Label,
   ResponsiveContainer,
 } from "recharts";
+// eslint-disable-next-line import/no-unresolved
 import Title from "./Title";
 
 // Generate Sales Data

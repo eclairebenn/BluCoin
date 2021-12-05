@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import React from "react";
 import { connect } from "react-redux";
 import * as tickerActions from "../../redux/actions/tickerActions";
