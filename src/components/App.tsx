@@ -1,10 +1,11 @@
+/* eslint-disable import/no-unresolved */
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./home/HomePage";
 import AboutPage from "./about/AboutPage";
 import Header from "./common/Header";
 import PageNotFound from "./PageNotFound";
-import TickerPage from "./courses/TickerPage";
+import TickerPage from "./tickers/TickerPage";
 
 function App() {
   return (

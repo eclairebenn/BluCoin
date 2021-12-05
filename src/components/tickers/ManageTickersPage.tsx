@@ -1,16 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as tickerActions from "../../redux/actions/tickerActions";
-import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 
-class ManageTickersPage extends React.Component {
-  state = {
-    ticker: {
-      name: "",
-    },
+interface Props {
+  actions: { createTicker: Function };
+}
+interface State {
+  ticker: {
+    name: string;
+    ticker: string;
   };
+}
 
+class ManageTickersPage extends React.Component<Props, State> {
   handleChange = (e) => {
     const ticker = { ...this.state.ticker, name: e.target.value };
     this.setState({ ticker });
@@ -27,7 +30,6 @@ class ManageTickersPage extends React.Component {
         <h3>Add Ticker</h3>
         <input
           type="text"
-          label="Name"
           onChange={this.handleChange}
           value={this.state.ticker.name}
         />
@@ -37,14 +39,9 @@ class ManageTickersPage extends React.Component {
   }
 }
 
-ManageTickersPage.propTypes = {
-  tickers: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
-};
-
 function mapStateToProps(state) {
   return {
-    courses: state.tickers,
+    tickers: state.tickers,
   };
 }
 

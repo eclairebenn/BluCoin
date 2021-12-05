@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import * as types from "./actionTypes";
 import * as tickerApi from "../../api/tickerApi";
 
@@ -7,7 +8,7 @@ export function createTicker(ticker) {
 
 export function loadTickersSuccess(tickers) {
   console.log("inside loadtickers success tickers: " + tickers);
-  return { type: types.LOAD_TICKERS_SUCCESS, tickers: tickers };
+  return { type: types.LOAD_TICKERS_SUCCESS, tickers };
 }
 
 //Thunk
@@ -18,9 +19,9 @@ export function loadTickers() {
       .then((tickers) => {
         console.log(
           "Hello inside the action the ticker result is " +
-            JSON.stringify(tickers.results)
+            JSON.stringify(tickers)
         );
-        dispatch(loadTickersSuccess(tickers.results));
+        dispatch(loadTickersSuccess(tickers));
       })
       .catch((error) => {
         //Dispatch failed action

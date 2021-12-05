@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import * as types from "../actions/actionTypes";
 
 export default function tickerReducer(state = [], action) {
@@ -7,7 +8,7 @@ export default function tickerReducer(state = [], action) {
 
     case types.LOAD_TICKERS_SUCCESS:
       console.log("Hi im inside the reducer" + action.tickers);
-      return [...action.tickers];
+      return action.tickers;
 
     default:
       return state;
